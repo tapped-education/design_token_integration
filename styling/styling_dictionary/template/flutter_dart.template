@@ -1,0 +1,21 @@
+
+
+<%
+%>
+//
+// <%= file.destination %>
+//
+<%= fileHeader({file, commentStyle: 'short'}) %>
+
+import 'package:flutter/rendering.dart';
+import 'package:flutter/material.dart';
+
+// ignore_for_file: non_constant_identifier_names
+
+class <%= file.className %> {
+  <%= file.className %>._();
+
+    <%= allTokens.map(function(prop) {
+      return 'static const ' + formatProperty(prop);
+    }).join('\n    ') %>
+}

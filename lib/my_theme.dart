@@ -1,0 +1,126 @@
+import 'package:flutter/material.dart';
+import 'package:styling/app_text_theme.dart';
+import 'package:styling/app_theme_data.dart';
+import 'package:styling/dimension_data.dart';
+import 'package:styling/generated/dark_theme.g.dart';
+import 'package:styling/generated/light_theme.g.dart';
+
+class MyTheme {
+  const MyTheme._();
+
+  static AppThemeData buildLightTheme() {
+    return AppThemeData(
+      brightness: Brightness.light,
+      borderActive: LightTheme.color_border_active,
+      borderInactive: LightTheme.color_border_inactive,
+      borderLicenseplate: LightTheme.color_border_licenseplate,
+      surfaceButtonPrimary: LightTheme.color_surface_button_primary,
+      surfaceCardOverlay: LightTheme.color_surface_card_overlay,
+      surfaceUnderInput: LightTheme.color_surface_under_input,
+      surfaceDefault: LightTheme.color_surface_default,
+      surfaceHover: LightTheme.color_surface_hover,
+      surfaceLicenseplate: LightTheme.color_surface_licenseplate,
+      surfaceTabActive: LightTheme.color_surface_tab_active,
+      surfaceTabInactive: LightTheme.color_surface_tab_inactive,
+      surfaceInput: LightTheme.color_surface_input,
+      surfaceSnackError: LightTheme.color_surface_warning_snack,
+      surfaceSnackInfo: LightTheme.color_surface_info_snack,
+      surfaceSnackSuccess: LightTheme.color_surface_success_snack,
+      textActive: LightTheme.color_text_active,
+      textBodySecondary: LightTheme.color_text_body_secondary,
+      textStart: LightTheme.color_text_start,
+      textDestination: LightTheme.color_text_destination,
+      textError: LightTheme.color_text_error,
+      textLicenseplate: LightTheme.color_text_licenseplate,
+      textLicenseplateInactive: LightTheme.color_text_licenseplate_inactive,
+      textOnCta: LightTheme.color_text_on_cta,
+      textPrimary: LightTheme.color_text_primary,
+      textShadow: LightTheme.color_text_shadow,
+      textWarning: LightTheme.color_text_warning,
+      textSnackError: LightTheme.color_text_warning_snack,
+      textSnackInfo: LightTheme.color_text_info_snack,
+      textSnackSuccess: LightTheme.color_text_success_snack,
+      surfaceErrorSubtle: LightTheme.color_surface_error_subtle,
+      borderHeader: LightTheme.color_border_header,
+      listElementsRadius: LightTheme.dimension_sm,
+      dimension: const DimensionData(
+        xxs: LightTheme.dimension_xxs,
+        xs: LightTheme.dimension_xs,
+        s: LightTheme.dimension_s,
+        sm: LightTheme.dimension_sm,
+        m: LightTheme.dimension_m,
+        l: LightTheme.dimension_l,
+        xl: LightTheme.dimension_xl,
+        xxl: LightTheme.dimension_2xl,
+        xxxl: LightTheme.dimension_3xl,
+      ),
+      textStyle: AppTextTheme(
+        caption: LightTheme.font_mobile_caption.copyWith(color: LightTheme.color_text_primary),
+        copy: LightTheme.font_mobile_copy.copyWith(color: LightTheme.color_text_primary),
+        extraHuge: LightTheme.font_mobile_extra_huge.copyWith(color: LightTheme.color_text_primary),
+        label: LightTheme.font_mobile_label.copyWith(color: LightTheme.color_text_primary),
+        subCopy: LightTheme.font_mobile_sub_copy.copyWith(color: LightTheme.color_text_primary),
+        subtitle: LightTheme.font_mobile_subtitle.copyWith(color: LightTheme.color_text_primary),
+        title: LightTheme.font_mobile_title.copyWith(color: LightTheme.color_text_primary),
+      ),
+    );
+  }
+
+  static AppThemeData buildDarkTheme() {
+    return AppThemeData(
+      brightness: Brightness.dark,
+      borderActive: DarkTheme.color_border_active,
+      borderInactive: DarkTheme.color_border_inactive,
+      borderLicenseplate: DarkTheme.color_border_licenseplate,
+      surfaceButtonPrimary: DarkTheme.color_surface_button_primary,
+      surfaceCardOverlay: DarkTheme.color_surface_card_overlay,
+      surfaceUnderInput: DarkTheme.color_surface_under_input,
+      surfaceDefault: DarkTheme.color_surface_default,
+      surfaceHover: DarkTheme.color_surface_hover,
+      surfaceLicenseplate: DarkTheme.color_surface_licenseplate,
+      surfaceTabActive: DarkTheme.color_surface_tab_active,
+      surfaceTabInactive: DarkTheme.color_surface_tab_inactive,
+      surfaceInput: DarkTheme.color_surface_input,
+      surfaceSnackError: DarkTheme.color_surface_warning_snack,
+      surfaceSnackInfo: DarkTheme.color_surface_info_snack,
+      surfaceSnackSuccess: DarkTheme.color_surface_success_snack,
+      textActive: DarkTheme.color_text_active,
+      textBodySecondary: DarkTheme.color_text_body_secondary,
+      textStart: DarkTheme.color_text_start,
+      textDestination: DarkTheme.color_text_destination,
+      textError: DarkTheme.color_text_error,
+      textLicenseplate: DarkTheme.color_text_licenseplate,
+      textLicenseplateInactive: DarkTheme.color_text_licenseplate_inactive,
+      textOnCta: DarkTheme.color_text_on_cta,
+      textPrimary: DarkTheme.color_text_primary,
+      textShadow: DarkTheme.color_text_shadow,
+      textWarning: DarkTheme.color_text_warning,
+      textSnackError: DarkTheme.color_text_warning_snack,
+      textSnackInfo: DarkTheme.color_text_info_snack,
+      textSnackSuccess: DarkTheme.color_text_success_snack,
+      surfaceErrorSubtle: DarkTheme.color_surface_error_subtle,
+      borderHeader: DarkTheme.color_border_header,
+      listElementsRadius: DarkTheme.dimension_sm,
+      dimension: const DimensionData(
+        xxs: DarkTheme.dimension_xxs,
+        xs: DarkTheme.dimension_xs,
+        s: DarkTheme.dimension_s,
+        sm: DarkTheme.dimension_sm,
+        m: DarkTheme.dimension_m,
+        l: DarkTheme.dimension_l,
+        xl: DarkTheme.dimension_xl,
+        xxl: DarkTheme.dimension_2xl,
+        xxxl: DarkTheme.dimension_3xl,
+      ),
+      textStyle: AppTextTheme(
+        caption: DarkTheme.font_mobile_caption.copyWith(color: DarkTheme.color_text_primary),
+        copy: DarkTheme.font_mobile_copy.copyWith(color: DarkTheme.color_text_primary),
+        extraHuge: DarkTheme.font_mobile_extra_huge.copyWith(color: DarkTheme.color_text_primary),
+        label: DarkTheme.font_mobile_label.copyWith(color: DarkTheme.color_text_primary),
+        subCopy: DarkTheme.font_mobile_sub_copy.copyWith(color: DarkTheme.color_text_primary),
+        subtitle: DarkTheme.font_mobile_subtitle.copyWith(color: DarkTheme.color_text_primary),
+        title: DarkTheme.font_mobile_title.copyWith(color: DarkTheme.color_text_primary),
+      ),
+    );
+  }
+}

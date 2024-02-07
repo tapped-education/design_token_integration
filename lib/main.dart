@@ -7,8 +7,15 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  ThemeMode _themeMode = ThemeMode.light;
 
   // This widget is the root of your application.
   @override
@@ -18,7 +25,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Flutter Demo',
-      themeMode: ThemeMode.light,
+      themeMode: _themeMode,
       theme: lightTheme.toTheme(),
       darkTheme: darkTheme.toTheme(),
       builder: (context, child) {
@@ -31,13 +38,26 @@ class MyApp extends StatelessWidget {
           child: child!,
         );
       },
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(
+        title: 'Flutter Demo Home Page',
+        themeMode: _themeMode,
+        onThemeModeChanged: (themeMode) {
+          setState(() {
+            _themeMode = themeMode;
+          });
+        },
+      ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({
+    super.key,
+    required this.title,
+    required this.themeMode,
+    required this.onThemeModeChanged,
+  });
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -49,6 +69,10 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
+
+  final ThemeMode themeMode;
+
+  final ValueChanged<ThemeMode> onThemeModeChanged;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -78,6 +102,14 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.light_mode_rounded),
+          onPressed: () {
+            final newMode = widget.themeMode == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
+
+            widget.onThemeModeChanged(newMode);
+          },
+        ),
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
